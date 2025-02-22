@@ -1,3 +1,5 @@
+#include <math.h>
+
 struct Vector2D
 {
 	float x = 0.f;
@@ -73,6 +75,11 @@ struct Vector2D
 	inline Vector2D operator- (const Vector2D& a, const Vector2D& b)
 	{
 		return Vector2D(a.x - b.x, a.y - b.y);
+	}
+
+	inline bool operator== (const Vector2D& a, const Vector2D& b)
+	{
+		return a.x == b.x && a.y == b.y;
 	}
 
 	inline float Magnitude(const Vector2D& v) 
