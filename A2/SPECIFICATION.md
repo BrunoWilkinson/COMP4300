@@ -1,7 +1,5 @@
 # Assignment 2 - Specification
 
-## Features
-
 ## Player:
 - [ ] The player is represented by a shape which is defined in the config file.
 - [ ] The player must spawn in the center of the screen at the beginning of the game, and after it dies (collides with an enemy).
