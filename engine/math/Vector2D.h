@@ -87,7 +87,7 @@ struct Vector2D
 		return sqrt(v.x * v.x + v.y * v.y);
 	}
 
-	inline Vector2D normalize(const Vector2D& v)
+	inline Vector2D Normalize(const Vector2D& v)
 	{
 		return v / Magnitude(v);
 	}
