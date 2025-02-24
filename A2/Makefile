@@ -10,7 +10,7 @@
 
 # define which compiler to use
 CXX := g++
-OUTPUT := sfmlgame
+OUTPUT := A2 
 
 # compile and linker flags
 CXX_FLAGS := -O3 -std=c++20 -Wno-unused-result
@@ -38,4 +38,4 @@ clean:
 
 # typing `make run` will compild and run the program
 run: $(OUTPUT)
-	cd bin && ./a2 && cd ..
+	cd bin && ./A2 && cd ..
