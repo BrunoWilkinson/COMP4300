@@ -10,4 +10,5 @@ class Game
 public:
 	Game(const std::string& path, const std::string& window_name) = default;
 	void run();
+
 }
