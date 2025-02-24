@@ -94,7 +94,7 @@
     | **SMIN, SMAX** | Min/Max Speed | float, float |
     | **OR, OG, OB** | Outline Color | int, int, int |
     | **OT** | Outline Thickness | int |
-    | **VMIN, VMAX** | Min/Max | int, int |
+    | **VMIN, VMAX** | Min/Max Vertices | int, int |
     | **L** | Small Lifespan | int |
     | **SP** | Spawn Interval | int |
 
