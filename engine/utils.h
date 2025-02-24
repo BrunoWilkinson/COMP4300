@@ -17,3 +17,5 @@ namespace utils
         retun sf::Color(col[0] * 255, col[1] * 255, col[2] * 255);
     }
 }
+
+#endif

@@ -28,10 +28,12 @@ class ConfigManager
 		{
 			if (token == ConfigData.token)
 			{
-                m_fileIn >> 
+		// m_fileIn >> 
 			}
 		}
 
 		ResetFileStream();
 	}
 };
+
+#endif

@@ -94,4 +94,6 @@ struct Vector2D
 	{
 		return v / Magnitude(v);
 	}
-}
+};
+
+#endif

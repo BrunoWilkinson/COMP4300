@@ -8,7 +8,9 @@ class Game
 	void init(const std::string& path, const std::string& window_name);
 
 public:
-	Game(const std::string& path, const std::string& window_name) = default;
+	Game(const std::string& path, const std::string& window_name);
 	void run();
 
-}
+};
+
+#endif
