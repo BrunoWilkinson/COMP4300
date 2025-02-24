@@ -7,7 +7,7 @@
 #include <fstream>
 #include <iostream>
 #include <cmath>
-#include "game.h"
+#include "Game.h"
 
 Game::Game(const std::string& path, const std::string& window_name);
 {
