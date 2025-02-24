@@ -1,7 +1,7 @@
 #ifndef UTILS_H
 #define UTILS_H
 
-#include <Color.hpp>
+#include <SFML/Color.hpp>
 
 namespace utils
 {
