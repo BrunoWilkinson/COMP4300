@@ -20,5 +20,4 @@ public:
 	  const unsigned int frame_linit);
 };
 
-
 #endif
