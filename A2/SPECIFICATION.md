@@ -98,7 +98,7 @@
     | **L** | Small Lifespan | int |
     | **SP** | Spawn Interval | int |
 
-    **Enemy SR CR S FR FG FB OR OG OB OT V L**
+    **Bullet SR CR S FR FG FB OR OG OB OT V L**
 
     | Key | Description | Type |
     | --- | ----------- | ---- |
