@@ -11,7 +11,7 @@ ConfigManager::ConfigManager(const std::string& path)
     , m_file_in(std::ifstream(path))
 {}
 
-config_data ConfigManager::get_config_data(const std::string& config_name)
+const std::vector<std::string> ConfigManager::get_config_data(const std::string& config_name)
 {
     m_config_data.clear();
     reset_file_stream();
@@ -33,7 +33,7 @@ config_data ConfigManager::get_config_data(const std::string& config_name)
 	
 	if (is_data)
 	{
-	    m_config_data.insert(m_config_data.begin(), token);  
+	    m_config_data.push_back(token);
 	}
     }
 

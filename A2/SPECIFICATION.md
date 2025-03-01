@@ -104,6 +104,7 @@
     | --- | ----------- | ---- |
     | **SR** | Shape Radius | int |
     | **CR** | Collision Radius | int |
+    | **S** | Speed | float |
     | **FR, FG, FB** | Fill Color | int, int, int |
     | **OR, OG, OB** | Outline Color | int, int, int |
     | **OT** | Outline Thickness | int |

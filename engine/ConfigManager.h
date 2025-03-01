@@ -6,19 +6,17 @@
 #include <iostream>
 #include <vector>
 
-typedef std::vector<std::string> config_data;
-
 class ConfigManager
 {
     std::string m_path;
     std::ifstream m_file_in;
-    config_data m_config_data;
+    std::vector<std::string> m_config_data;
 
     void reset_file_stream();
 
 public:
     ConfigManager(const std::string& path);
-    config_data get_config_data(const std::string& config_name);
+    const std::vector<std::string> get_config_data(const std::string& config_name);
 };
 
 #endif
