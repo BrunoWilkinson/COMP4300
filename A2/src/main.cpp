@@ -1,5 +1,5 @@
-#include "../../engine/Game.h"
 #include "../../engine/ConfigManager.h"
+#include "Game.h"
 
 struct Window 
 {
@@ -132,4 +132,13 @@ int main(int argc, char* argv[])
         std::stoi(config_bullet[10]),
         std::stoi(config_bullet[11]),
     };
+
+    Game* game = new Game();
+    game->setup( 
+        "A2",
+        window.width,
+        window.height,
+        window.frame_limit
+    );
+    game->init();
 }

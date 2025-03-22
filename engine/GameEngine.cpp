@@ -5,7 +5,7 @@
 #include <cmath>
 #include "Game.h"
 
-Game::Game(const std::string& path,
+void GameEngine::setup(
            const std::string& window_name,
            const unsigned int window_width,
            const unsigned int window_height,
@@ -19,11 +19,15 @@ Game::Game(const std::string& path,
     init();
 }
 
-void Game::run()
+void GameEngine::update_systems()
 {
 }
 
-void Game::init()
+void GameEngine::update_debug_window()
+{
+}
+
+void GameEngine::init()
 {
     if (!ImGui::SFML::Init(m_window))
     {
@@ -46,11 +50,17 @@ void Game::init()
 
         ImGui::SFML::Update(m_window, m_delta_clock.restart());
 
+        ImGui::Begin("Debug window");
+
+        update_debug_window();
+
         m_window.clear();
 
-        // run ecs systems
-        run();
+        update_systems();
 
+        ImGui::End();
+
+        ImGui::SFML::Render(m_window);
         m_window.display();
     }
 
