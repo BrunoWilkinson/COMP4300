@@ -53,7 +53,7 @@
 - [ ] The **ESC Key** should close the game.
 
 ## Configuration File
-- [ ] The config file will have one line each specifyin the windows side, font format, player, bullet specification, and enemy specifications.
+- [x] The config file will have one line each specifyin the windows side, font format, player, bullet specification, and enemy specifications.
      Lines will be given in that order, with the following syntax:
 
     **Window W H FL FS**
