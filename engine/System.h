@@ -13,6 +13,7 @@ public:
     virtual void update();
     void set_enabled(const bool enabled);
     bool is_enabled() const { return m_enabled; }
+    const std::string& name() { return m_name; }
 };
 
 #endif
