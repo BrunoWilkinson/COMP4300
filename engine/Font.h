@@ -7,7 +7,6 @@
 
 class Font
 {
-public:
     sf::Font m_font;
     bool m_valid = false;
     std::string m_path = "";
