@@ -4,6 +4,7 @@
 #include <iostream>
 #include <cmath>
 #include "Game.h"
+#include "Font.h"
 
 void GameEngine::setup(
            const std::string& window_name,
@@ -15,6 +16,11 @@ void GameEngine::setup(
         sf::VideoMode({window_width, window_height}),
         window_name);
     m_window.setFramerateLimit(framerate_limit);
+}
+
+void GameEngine::add_font(const std::string& name, const std::string& path)
+{
+    m_font_map[name] = std::make_shared<Font>(path);
 }
 
 void GameEngine::update_systems()

@@ -3,7 +3,7 @@
 
 #include "../../engine/GameEngine.h"
 
-struct Window 
+struct WindowConfig
 {
     int width = 0;
     int height = 0;
@@ -11,7 +11,7 @@ struct Window
     bool is_fullscreen = false;
 };
 
-struct Font
+struct FontConfig
 {
     std::string path = "";
     int size = 0;
@@ -57,8 +57,8 @@ struct Bullet
 
 class Game : public GameEngine
 {
-	Window m_config_window;
-	Font m_font;
+	WindowConfig m_config_window;
+	FontConfig m_config_font;
 	Player m_player;
 	Enemy m_enemy;
 	Bullet m_bullet;

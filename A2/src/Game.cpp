@@ -15,7 +15,7 @@ Game::Game()
     };
 
     const std::vector<std::string> config_font = config_manager.get_config_data("Font");
-    m_font = {
+    m_config_font = {
         config_font[0],
         std::stoi(config_font[1]),
         { 
@@ -91,6 +91,7 @@ void Game::setup()
         m_config_window.height,
         m_config_window.frame_limit
     );
+    GameEngine::add_font("halo_dek", m_config_font.path);
 }
 
 void Game::update_systems()
