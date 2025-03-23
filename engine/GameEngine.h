@@ -14,7 +14,7 @@ protected:
     virtual void update_debug_window();
 
 public:
-    void init();
+    void update();
     virtual void setup(
 	const std::string& window_name,
 	const unsigned int window_width,

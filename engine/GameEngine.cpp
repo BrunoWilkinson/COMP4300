@@ -15,8 +15,6 @@ void GameEngine::setup(
         sf::VideoMode({window_width, window_height}),
         window_name);
     m_window.setFramerateLimit(framerate_limit);
-
-    init();
 }
 
 void GameEngine::update_systems()
@@ -27,7 +25,7 @@ void GameEngine::update_debug_window()
 {
 }
 
-void GameEngine::init()
+void GameEngine::update()
 {
     if (!ImGui::SFML::Init(m_window))
     {
