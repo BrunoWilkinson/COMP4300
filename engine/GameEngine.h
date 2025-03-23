@@ -3,17 +3,20 @@
 
 #include <string>
 #include <map>
+#include <vector>
 #include <memory>
 #include <SFML/Graphics.hpp>
 
 
 class Font;
+class System;
 
 class GameEngine
 {
     sf::Clock m_delta_clock;
     sf::RenderWindow m_window;
     std::map<std::string, std::shared_ptr<Font>> m_font_map;
+    std::vector<std::shared_ptr<System>> m_system_list;
 
 protected:
     virtual void update_systems();
@@ -22,6 +25,7 @@ protected:
 public:
     void update();
     void add_font(const std::string& name, const std::string& path);
+    void add_system(std::shared_ptr<System> system);
     virtual void setup(
 	const std::string& window_name,
 	const unsigned int window_width,

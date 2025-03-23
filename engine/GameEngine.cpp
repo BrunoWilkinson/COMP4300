@@ -5,6 +5,7 @@
 #include <cmath>
 #include "Game.h"
 #include "Font.h"
+#include "System.h"
 
 void GameEngine::setup(
            const std::string& window_name,
@@ -23,8 +24,20 @@ void GameEngine::add_font(const std::string& name, const std::string& path)
     m_font_map[name] = std::make_shared<Font>(path);
 }
 
+void GameEngine::add_system(const std::shared_ptr<System> system)
+{
+    m_system_list.push_back(system);
+}
+
 void GameEngine::update_systems()
 {
+    for (std::shared_ptr<System> system : m_system_list)
+    {
+        if (system->is_enabled())
+        {
+            system->update();
+        }
+    }
 }
 
 void GameEngine::update_debug_window()

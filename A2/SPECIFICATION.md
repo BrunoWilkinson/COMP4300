@@ -40,7 +40,7 @@
      spawned, to 0 on the last frame it is alive
 
 ## GUI:
-- [ ] You must construct a GUI using ImGui.
+- [x] You must construct a GUI using ImGui.
 - [ ] The GUI must display options to turn off each system independently.
 - [ ] For each entity in the game, the GUI must list the ID, tag, and position of that entity. You must display a list of all entities, as well as lists of entities by their tag.
      You must also have some way of destroying a given entity by interacting with the UI element associated with it.
