@@ -85,12 +85,12 @@ struct Vector2D
 		return a.x == b.x && a.y == b.y;
 	}
 
-	inline float Magnitude(const Vector2D& v) 
+	inline float magnitude(const Vector2D& v) 
 	{
 		return sqrt(v.x * v.x + v.y * v.y);
 	}
 
-	inline Vector2D Normalize(const Vector2D& v)
+	inline Vector2D normalize(const Vector2D& v)
 	{
 		return v / Magnitude(v);
 	}

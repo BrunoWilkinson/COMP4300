@@ -16,7 +16,7 @@ class Entity
 public:
     const std::string& tag() const { return m_tag; }
     const size_t id() const { return m_id; }
-    bool isAlive() const { return m_alive; }
+    bool is_alive() const { return m_alive; }
 
     void destroy();
 };

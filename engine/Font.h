@@ -19,7 +19,7 @@ public:
         m_valid = m_font.loadFromFile(m_path);
     }
 
-    bool setText(const std::string& string, sf::Text& text)
+    bool set_text(const std::string& string, sf::Text& text)
     {
         if (!m_valid)
         {
