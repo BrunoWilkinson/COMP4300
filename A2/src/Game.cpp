@@ -1,6 +1,8 @@
 #include "Game.h"
 #include "../../engine/imgui/imgui.h"
 #include "../../engine/ConfigManager.h"
+#include "../../engine/EntityManager.h"
+#include "../../engine/Entity.h"
 
 Game::Game()
 {
@@ -92,6 +94,11 @@ void Game::setup()
         m_config_window.frame_limit
     );
     GameEngine::add_font("halo_dek", m_config_font.path);
+
+    assert(GameEngine::entity_manager());
+
+    // create player
+    std::shared_ptr<Entity> player = GameEngine::entity_manager()->add_entity("player");
 }
 
 void Game::update_systems()

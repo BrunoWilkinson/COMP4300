@@ -20,7 +20,7 @@ class EntityManager
     size_t m_total_entities = 0;
 
 public: 
-    EntityManager();
+    EntityManager() = default;
     void update();
     std::shared_ptr<Entity> add_entity(const std::string& tag);
     EntityList& get_entities();

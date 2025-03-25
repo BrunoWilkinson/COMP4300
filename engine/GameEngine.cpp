@@ -6,6 +6,7 @@
 #include "Game.h"
 #include "Font.h"
 #include "System.h"
+#include "EntityManager.h"
 
 void GameEngine::setup(
            const std::string& window_name,
@@ -17,6 +18,8 @@ void GameEngine::setup(
         sf::VideoMode({window_width, window_height}),
         window_name);
     m_window.setFramerateLimit(framerate_limit);
+
+    m_entity_manager = std::make_shared<EntityManager>();
 }
 
 void GameEngine::add_font(const std::string& name, const std::string& path)
@@ -64,6 +67,8 @@ void GameEngine::update()
                 m_window.close();
             }
         }
+
+        m_entity_manager->update();
 
         ImGui::SFML::Update(m_window, m_delta_clock.restart());
 
