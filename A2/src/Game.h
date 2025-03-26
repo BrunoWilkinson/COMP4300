@@ -18,7 +18,7 @@ struct FontConfig
     float color[3] = { 0.0f, 0.0f, 0.0f };
 };
 
-struct Player
+struct PlayerConfig
 {
     int shape_radius = 0;
     int collision_radius = 0;
@@ -29,7 +29,7 @@ struct Player
     int shape_vertices = 0;
 };
 
-struct Enemy
+struct EnemyConfig
 {
     int shape_radius = 0;
     int collision_radius = 0;
@@ -43,7 +43,7 @@ struct Enemy
     int spawn_interval = 0;
 };
 
-struct Bullet
+struct BulletConfig
 {
     int shape_radius = 0;
     int collision_radius = 0;
@@ -59,9 +59,9 @@ class Game : public GameEngine
 {
 	WindowConfig m_config_window;
 	FontConfig m_config_font;
-	Player m_player;
-	Enemy m_enemy;
-	Bullet m_bullet;
+	PlayerConfig m_config_player;
+	EnemyConfig m_config_enemy;
+	BulletConfig m_config_bullet;
 
 protected:
 	virtual void update_systems() override;

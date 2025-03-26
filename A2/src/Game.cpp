@@ -30,7 +30,7 @@ Game::Game()
     };
 
     const std::vector<std::string> config_player = config_manager.get_config_data("Player");
-    m_player = {
+    m_config_player = {
         std::stoi(config_player[0]),
         std::stoi(config_player[1]),
         std::stof(config_player[2]),
@@ -49,7 +49,7 @@ Game::Game()
     };
 
     const std::vector<std::string> config_enemy = config_manager.get_config_data("Enemy");
-    m_enemy = {
+    m_config_enemy = {
         std::stoi(config_enemy[0]),
         std::stoi(config_enemy[1]),
         std::stof(config_enemy[2]),
@@ -67,7 +67,7 @@ Game::Game()
     };
 
     const std::vector<std::string> config_bullet = config_manager.get_config_data("Bullet");
-    m_bullet = {
+    m_config_bullet = {
         std::stoi(config_bullet[0]),
         std::stoi(config_bullet[1]),
         std::stof(config_bullet[2]),
