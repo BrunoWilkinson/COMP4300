@@ -21,8 +21,8 @@ public:
     const size_t id() const { return m_id; }
     bool is_alive() const { return m_alive; }
     void destroy();
-    void add_component(const std::shared_ptr<void> component);
-    void remove_component(const std::shared_ptr<void> component);
+    void add_component(std::shared_ptr<void> component);
+    void remove_component(std::shared_ptr<void> component);
 
     template<typename T>
     std::shared_ptr<T> find_component(const std::shared_ptr<void> component)

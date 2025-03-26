@@ -37,7 +37,7 @@ struct Vector2D
 		s = 1.0f / s;
 		x *= s;
 		y *= s;
-		return *this
+		return *this;
 	}
 
 	Vector2D& operator+= (const Vector2D& v)
@@ -53,47 +53,47 @@ struct Vector2D
 		y -= v.y;
 		return *this;
 	}
-
-	inline Vector2D operator* (const Vector2D& v, const float s)
-	{
-		return Vector2D(v.x * s, v.y * s);
-	}
-
-	inline Vector2D operator/ (const Vector2D& v, float s)
-	{
-		s = 1.0f / s
-		return Vector2D(v.x * s, v.y * s);
-	}
-
-	inline Vector2D operator- (const Vector2D& v)
-	{
-		return Vector2D(-v.x, -v.y);
-	}
-
-	inline Vector2D operator+ (const Vector2D& a, const Vector2D& b)
-	{
-		return Vector2D(a.x + b.x, a.y + b.y);
-	}
-
-	inline Vector2D operator- (const Vector2D& a, const Vector2D& b)
-	{
-		return Vector2D(a.x - b.x, a.y - b.y);
-	}
-
-	inline bool operator== (const Vector2D& a, const Vector2D& b)
-	{
-		return a.x == b.x && a.y == b.y;
-	}
-
-	inline float magnitude(const Vector2D& v) 
-	{
-		return sqrt(v.x * v.x + v.y * v.y);
-	}
-
-	inline Vector2D normalize(const Vector2D& v)
-	{
-		return v / Magnitude(v);
-	}
 };
+
+inline Vector2D operator* (const Vector2D& v, const float s)
+{
+	return Vector2D(v.x * s, v.y * s);
+}
+
+inline Vector2D operator/ (const Vector2D& v, float s)
+{
+	s = 1.0f / s;
+	return Vector2D(v.x * s, v.y * s);
+}
+
+inline Vector2D operator- (const Vector2D& v)
+{
+	return Vector2D(-v.x, -v.y);
+}
+
+inline Vector2D operator+ (const Vector2D& a, const Vector2D& b)
+{
+	return Vector2D(a.x + b.x, a.y + b.y);
+}
+
+inline Vector2D operator- (const Vector2D& a, const Vector2D& b)
+{
+	return Vector2D(a.x - b.x, a.y - b.y);
+}
+
+inline bool operator== (const Vector2D& a, const Vector2D& b)
+{
+	return a.x == b.x && a.y == b.y;
+}
+
+inline float magnitude(const Vector2D& v) 
+{
+	return sqrt(v.x * v.x + v.y * v.y);
+}
+
+inline Vector2D normalize(const Vector2D& v)
+{
+	return v / magnitude(v);
+}
 
 #endif

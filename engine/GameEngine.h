@@ -7,7 +7,6 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 
-
 class Font;
 class System;
 class EntityManager;
