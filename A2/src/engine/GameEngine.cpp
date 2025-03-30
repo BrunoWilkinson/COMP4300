@@ -1,5 +1,5 @@
-#include "imgui.h" // necessary for ImGui::*, imgui-SFML.h doesn't include imgui.h
-#include "imgui-SFML.h" // for ImGui::SFML::* functions and SFML-specific overloads
+#include "imgui/imgui.h" // necessary for ImGui::*, imgui-SFML.h doesn't include imgui.h
+#include "imgui/imgui-SFML.h" // for ImGui::SFML::* functions and SFML-specific overloads
 #include <fstream>
 #include <iostream>
 #include <cmath>
@@ -14,11 +14,11 @@ void GameEngine::setup(
            const unsigned int window_height,
            const unsigned int framerate_limit)
 {
-    m_window.create(
+    window.create(
         sf::VideoMode({window_width, window_height}),
-        window_name);
-    m_window.setFramerateLimit(framerate_limit);
-
+        window_name
+    );
+    window.setFramerateLimit(framerate_limit);
     m_entity_manager = std::make_shared<EntityManager>();
 }
 
@@ -38,7 +38,7 @@ void GameEngine::update_systems()
     {
         if (system->is_enabled())
         {
-            system->update();
+            system->update(this);
         }
     }
 }
@@ -49,41 +49,41 @@ void GameEngine::update_debug_window()
 
 void GameEngine::update()
 {
-    if (!ImGui::SFML::Init(m_window))
+    if (!ImGui::SFML::Init(window))
     {
         // TODO: add logging error
         return;
     }
 
-    while (m_window.isOpen())
+    while (window.isOpen())
     {
 	sf::Event event;
-        while (m_window.pollEvent(event))
+        while (window.pollEvent(event))
         {
-            ImGui::SFML::ProcessEvent(m_window, event);
+            ImGui::SFML::ProcessEvent(window, event);
 
             if (event.type == sf::Event::Closed)
             {
-                m_window.close();
+                window.close();
             }
         }
 
         m_entity_manager->update();
 
-        ImGui::SFML::Update(m_window, m_delta_clock.restart());
+        ImGui::SFML::Update(window, delta_clock.restart());
 
         ImGui::Begin("Debug window");
 
         update_debug_window();
 
-        m_window.clear();
+        window.clear();
 
         update_systems();
 
         ImGui::End();
 
-        ImGui::SFML::Render(m_window);
-        m_window.display();
+        ImGui::SFML::Render(window);
+        window.display();
     }
 
     ImGui::SFML::Shutdown();

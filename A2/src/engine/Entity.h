@@ -25,9 +25,17 @@ public:
     void remove_component(std::shared_ptr<void> component);
 
     template<typename T>
-    std::shared_ptr<T> find_component(const std::shared_ptr<void> component)
+    std::shared_ptr<T> find_component()
     {
-        return static_cast<std::shared_ptr<T>>(m_component_set.find(component));
+        for (std::shared_ptr<void> component : m_component_set)
+        {
+            std::shared_ptr<T> found_component = static_pointer_cast<T>(component);
+            if (found_component)
+            {
+                return found_component;
+            }
+        }
+        return nullptr;
     }
 };
 

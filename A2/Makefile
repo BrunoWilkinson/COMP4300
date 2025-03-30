@@ -14,11 +14,11 @@ OUTPUT := A2
 
 # compile and linker flags
 CXX_FLAGS := -O3 -std=c++20 -Wno-unused-result
-INCLUDES := -I ./src -I ../engine/imgui -I ../engine
+INCLUDES := -I ./src
 LDFLAGS := -O3 -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lGL
 
-# the source files for the ecs gmae engine
-SRC_FILES := $(wildcard src/*.cpp ../engine/imgui/*.cpp ../engine/*.cpp)
+# the source files for the ecs ga,e engine
+SRC_FILES := $(wildcard src/*.cpp src/engine/imgui/*.cpp src/engine/*.cpp)
 OBJ_FILES := $(SRC_FILES:.cpp=.o)
 
 # all of these targets will be made if you just type make

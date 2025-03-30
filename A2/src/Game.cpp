@@ -1,7 +1,7 @@
-#include "../../engine/imgui/imgui.h"
-#include "../../engine/ConfigManager.h"
-#include "../../engine/EntityManager.h"
-#include "../../engine/Entity.h"
+#include "engine/imgui/imgui.h"
+#include "engine/ConfigManager.h"
+#include "engine/EntityManager.h"
+#include "engine/Entity.h"
 
 #include "Game.h"
 #include "Components.h"
@@ -103,6 +103,9 @@ void Game::setup()
     std::shared_ptr<Entity> player = GameEngine::entity_manager()->add_entity("player");
     player->add_component(
         std::make_shared<CTransform>(Vector2D(0.0f, 0.0f), Vector2D(0.0f, 0.0f), 0.0f)
+    );
+    player->add_component(
+        std::make_shared<CShape>(5, m_config_player.fill_color, m_config_player.outline_color, 1.f, 30)
     );
 }
 

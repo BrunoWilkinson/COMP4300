@@ -1,7 +1,7 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "../../engine/GameEngine.h"
+#include "engine/GameEngine.h"
 
 struct WindowConfig
 {
