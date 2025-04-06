@@ -8,6 +8,7 @@ class GameEngine;
 class RenderSystem : System
 {
 public:
+    RenderSystem(const std::string& name) : System(name) {};
     virtual void update(GameEngine* engine) override;
 };
 

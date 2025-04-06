@@ -8,13 +8,3 @@ void Entity::destroy()
 {
     m_alive = false;
 }
-
-void Entity::add_component(std::shared_ptr<void> component)
-{
-    m_component_set.insert(component);
-}
-
-void Entity::remove_component(std::shared_ptr<void> component)
-{
-    m_component_set.erase(component);
-}

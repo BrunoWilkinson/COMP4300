@@ -68,7 +68,7 @@ protected:
 	virtual void update_debug_window() override;
 
 public:
-	void setup();
+	void start();
 	Game();
 };
 

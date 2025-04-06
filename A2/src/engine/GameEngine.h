@@ -27,7 +27,7 @@ public:
 
     void update();
     void add_font(const std::string& name, const std::string& path);
-    void add_system(std::shared_ptr<System> system);
+    void add_system(std::shared_ptr<void> new_system);
     std::shared_ptr<EntityManager> entity_manager() const { return m_entity_manager; }
     virtual void setup(
 	const std::string& window_name,

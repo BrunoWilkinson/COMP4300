@@ -1,8 +1,8 @@
 #include "imgui/imgui.h" // necessary for ImGui::*, imgui-SFML.h doesn't include imgui.h
 #include "imgui/imgui-SFML.h" // for ImGui::SFML::* functions and SFML-specific overloads
-#include <fstream>
 #include <iostream>
 #include <cmath>
+#include <cassert>
 #include "Game.h"
 #include "Font.h"
 #include "System.h"
@@ -27,8 +27,10 @@ void GameEngine::add_font(const std::string& name, const std::string& path)
     m_font_map[name] = std::make_shared<Font>(path);
 }
 
-void GameEngine::add_system(const std::shared_ptr<System> system)
+void GameEngine::add_system(const std::shared_ptr<void> new_system)
 {
+    std::shared_ptr<System> system = static_pointer_cast<System>(new_system);
+    assert(system);
     m_system_list.push_back(system);
 }
 

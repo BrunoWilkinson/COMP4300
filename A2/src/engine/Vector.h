@@ -2,6 +2,7 @@
 #define VECTOR2D_H
 
 #include <cmath>
+#include <iostream>
 
 struct Vector2D
 {
@@ -23,6 +24,13 @@ struct Vector2D
 	const float& operator[] (const int i) const
 	{
 		return (&x)[i];
+	}
+
+	Vector2D& operator= (const Vector2D& v)
+	{
+		x *= v.x;
+		y *= v.y;
+		return *this;
 	}
 
 	Vector2D& operator*= (const float s)

@@ -1,42 +1,48 @@
+#include <cassert>
 #include "ConfigManager.h"
 
-void ConfigManager::reset_file_stream()
+ConfigManager::ConfigManager(const std::string& path, const std::vector<std::string>& list) : m_path(path)
 {
-    m_file_in.clear();
-    m_file_in.seekg(0);
+    for (const std::string& config_name : list)
+    {
+	add_config_data(config_name);
+    }
 }
 
-ConfigManager::ConfigManager(const std::string& path)
-    : m_path(path)
-    , m_file_in(std::ifstream(path))
-{}
-
-const std::vector<std::string> ConfigManager::get_config_data(const std::string& config_name)
+void ConfigManager::add_config_data(const std::string& config_name)
 {
-    m_config_data.clear();
-    reset_file_stream();
+    std::fstream file;
+    file.open(m_path);
+    assert(file.is_open());
+
+    std::vector<std::string> data;
 
     std::string token;
     bool is_data = false;
-
-    while (m_file_in >> token)
+    while (file >> token)
     {
         if (token == config_name)
 	{
 	    is_data = true;
 	    continue;
 	}
-	else if (token == ";" && is_data)
+
+	if (token == ";" && is_data)
 	{
 	    break;
 	}
 	
 	if (is_data)
 	{
-	    m_config_data.push_back(token);
+	    data.push_back(token);
 	}
     }
 
-    return m_config_data;
+    m_config_data.insert({ config_name, data });
+    file.close();
 }
 
+const std::vector<std::string>& ConfigManager::get_config_data(const std::string& config_name) const
+{
+    return m_config_data.find(config_name)->second;
+}
