@@ -24,7 +24,7 @@ Game::Game()
         static_cast<bool>(std::stoi(config_window[3])),
     };
 
-    const std::vector<std::string>& config_font = config_manager->get_config_data("Font");
+    const std::vector<std::string>& config_font = config_manager->get_config_data(config_list[1]);
     assert(config_font.size() == 5);
     m_config_font = {
         config_font[0],
@@ -36,7 +36,7 @@ Game::Game()
         },
     };
 
-    const std::vector<std::string>& config_player = config_manager->get_config_data("Player");
+    const std::vector<std::string>& config_player = config_manager->get_config_data(config_list[2]);
     assert(config_player.size() == 11);
     m_config_player = {
         std::stoi(config_player[0]),
@@ -56,7 +56,7 @@ Game::Game()
         std::stoi(config_player[10]),
     };
 
-    const std::vector<std::string>& config_enemy = config_manager->get_config_data("Enemy");
+    const std::vector<std::string>& config_enemy = config_manager->get_config_data(config_list[3]);
     assert(config_enemy.size() == 12);
     m_config_enemy = {
         std::stoi(config_enemy[0]),
@@ -75,7 +75,7 @@ Game::Game()
         std::stoi(config_enemy[11]),
     };
 
-    const std::vector<std::string>& config_bullet = config_manager->get_config_data("Bullet");
+    const std::vector<std::string>& config_bullet = config_manager->get_config_data(config_list[4]);
     assert(config_bullet.size() == 12);
     m_config_bullet = {
         std::stoi(config_bullet[0]),
